@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Onclick to change Input Box</title>
+</head>
+
+<body>
+    <h2>Onclick to change Input Box</h2>
+    <input type="text" name="name" placeholder="Enter Your Nmae" id="name">
+    <button onclick="myFunction(event)">Generate Input Box</button>
+    <script>
+    function myFunction(event) {
+        var inputElem = document.getElementById('name')
+        var input2 = inputElem.value;
+        var text = document.createElement("input");
+        text.setAttribute("id","nodeid")
+        document.body.appendChild(text).value = input2;
+        // document.getElementById('nodeid').value = input2;
+        text.removeEventListener('click', myFunction);
+
+    }
+    </script>
+</body>
+
+</html>
